@@ -1,9 +1,12 @@
-@import "./_variable.less";
-@import "./_fonts.less";
+@import "./settings/normalize.less";
+@import "./settings/reset.less";
+@import "./base/_variable.less";
+@import "./base/_fonts.less";
+@import "./common/header.less";
 
 body {
-    font-family: "Helvetica Black";
-    background-color: @red;
-    h1 {
-    }
+    font-family: "Helvetica";
+    font-weight: lighter;
+    font-size: @fs-16;
+    box-sizing: border-box;
 }

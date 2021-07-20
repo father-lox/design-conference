@@ -1,0 +1,221 @@
+@import "../base/_fonts.less";
+@import "../base/_variable.less";
+@import "../titles/title.less";
+@import "../text/text.less";
+@import "../menu/menu.less";
+@import "../button/button.less";
+@import "../meeting/meeting.less";
+
+.header {
+    @padding-top: 45px;
+    @padding-bottom: 45px;
+    @padding-right: 44px;
+    @padding-left: 49px;
+
+    padding: @padding-top @padding-right @padding-bottom @padding-left;
+    background: center/cover url("../../img/background-brick.jpg") no-repeat;
+    position: relative;
+
+    &__wrapper {
+        background-color: @transparent-black;
+        padding: 37px 41px 120px 41px;
+    }
+    
+    &__top-content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 86px;
+        
+        .menu {
+            margin: 0 30px;
+            width: 100%;
+
+            
+        
+            @media screen and (max-width: 1080px) {
+                
+            }
+        }
+    }
+    
+    .button {
+        height: 40px;
+        min-width: 140px;
+        max-width: 140px;
+    }
+
+    &__middle-content {
+        padding-left: 80px;
+
+        & .title {
+            margin-bottom: 4px;
+        }
+
+        & .button_type-b {
+            margin-top: 21px;
+        }
+    }
+
+    & .meeting {
+        position: absolute;
+        top: 417px;
+        right: 0;
+        padding-right: @padding-right;
+        padding-left: 30px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 277px;
+        top: 0px;
+        height: @padding-top;
+        width: 113px;
+        background-color: @red;
+    }
+
+    @media screen and (max-width: 1200px) {
+
+        .menu {
+            justify-content: space-between;
+            
+            .link:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        &__top-content {
+            margin-bottom: 76px;
+        }
+
+        &__middle-content {
+            padding-left: 0;
+        }
+
+        .meeting {
+            bottom: @padding-bottom;
+            top: auto;
+        }
+
+        .menu {
+            height: 50px;
+                align-content: space-between;
+                justify-content: flex-start;
+        
+                .link {
+                    min-width: 150px;
+                }
+        
+                .link:not(:last-child) {
+                    margin-right: 0;
+                }
+        }
+    }
+
+    @media screen and (max-width: 864px) {
+        &__wrapper {
+            background-color: @transparent-black;
+            padding: 17px 20px 120px 14px;
+        }
+        
+        &::before {
+            display: none;
+        }
+
+        &__middle-content {
+            .title {
+                font-size: 55px;
+            }
+        }
+
+        &__top-content {
+            flex-direction: column;
+            // position: relative;
+            align-items: flex-start;
+            margin-bottom: 30px;
+
+            .button {
+                position: absolute;
+                top: 0;
+                height: 73px;
+                left: 80%;
+                transform: translateX(-80%);
+                padding-top: 35px;
+            }
+
+            .menu {
+                height: auto;
+                margin: 26px 0 0 0;
+                justify-content: flex-start;
+
+                .link {
+                    text-transform: uppercase;
+                    min-width: auto;
+                    margin-bottom: 10px;                    
+
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            
+            & .logo {
+                height: 23px;
+            }
+        }
+
+        .meeting {
+            width: auto;
+
+            &__logo {
+                position: absolute;
+                top: -31px;
+                right: 50px;
+                height: 51px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        &__wrapper {
+            padding-bottom: 176px;
+        }
+
+        &__middle-content {
+            .title {
+                font-size: 45px;
+            }
+
+            .text {
+                font-weight: 200;
+            }
+        }
+
+        padding: 38px 14px 43px 14px;
+
+        .meeting {
+            bottom: auto;
+            top: 452px;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .menu {
+            .link {
+                min-width: 50%;
+
+                &:not(:last-child) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .meeting {
+            padding-right: 49px - 14px;
+            padding-left: 30px;
+        }
+    }
+
+}

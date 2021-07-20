@@ -1,0 +1,37 @@
+@import "../base/_variable.less";
+@import "../base/_fonts.less";
+
+.meeting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 103px;
+    width: 500px;
+    grid-template-columns: repeat(1fr, 2);
+    background-color: @red;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__data, &__place {
+        text-transform: uppercase;
+        color: @white;
+    }
+
+    &__data {
+        font-weight: 900;
+        font-size: 23px;
+    }
+
+    &__place {
+        font-weight: 300;
+        font-size: 15px;
+    }
+
+    &__logo {
+        // width: 144px;
+    }
+}
