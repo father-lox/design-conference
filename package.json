@@ -32,6 +32,7 @@
     "browser-sync": "^2.27.4",
     "gulp-fonter": "^0.3.0",
     "gulp-ttf2woff": "^1.1.1",
-    "gulp-ttf2woff2": "^4.0.1"
+    "gulp-ttf2woff2": "^4.0.1",
+    "less-plugin-autoprefix": "^2.0.0"
   }
 }

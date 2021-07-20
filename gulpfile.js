@@ -2,12 +2,19 @@ const {src, dest, watch, parallel} = require("gulp");
 
 const browserSync = require('browser-sync').create();
 const less = require('gulp-less');
+
+const LessAutoprefix = require("less-plugin-autoprefix");
+const autoprefix = new LessAutoprefix({ browsers: ['cover 99.5%', "last 10 version", "IE 11"] });
+
+
 const ttf2woff = require("gulp-ttf2woff");
 const ttf2woff2 = require("gulp-ttf2woff2");
 
 function LESSpreprocessing() {
-  return src('build/less/**/*.less')
-    .pipe(less())
+  return src('build/less/*.less')
+    .pipe(less({
+        plugins: [autoprefix]
+      }))
     .pipe(dest('dist/css'))
     .pipe(browserSync.stream());;
 };
