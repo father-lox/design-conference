@@ -1,0 +1,132 @@
+@import "../base/_variable.less";
+@import "../titles/title.less";
+@import "../text/text.less";
+
+.section-with-image {
+    display: flex;
+    align-items: center;
+
+    &__picture {
+        max-width: 811px;
+        width: 100%;
+        height: 470px;
+        position: relative;
+        box-sizing: border-box;
+
+        &_decor {
+            @border-width: 26px;
+            
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: "";
+                display: block;
+                width: @border-width;
+                height: 100%;
+                background-color: @red;
+            }
+            
+            &::after {
+                content: "";
+                display: block;
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: @border-width;
+                background-color: @transparent-black-image;
+            }
+        }
+
+        .section-with-image__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        padding-left: 60px;
+        padding-right: 90px;
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        .text {
+            margin-bottom: 14px;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 900;
+        color: @red;
+    }
+
+    @media screen and (max-width: 1080px) {
+        &__content {
+            padding-left: 45px;
+            padding-right: 45px;
+
+        }
+    }
+
+    @media screen and (max-width: 864px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding-right: 27px;
+
+        &__picture {
+            @border-width: 9px;
+            max-width: none;
+            min-height: 260px;
+            height: 260px;
+
+            &_decor::before {
+                width: @border-width;
+            }
+
+            &_decor::after {
+                right: @border-width;
+            }
+        }
+        
+        &__content {
+            margin-top: 20px;
+            padding-left: 45px;
+            padding-right: 45px - 27px;
+            width: 100%;
+
+            .title {
+                margin-bottom: 12px;
+            }
+
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        &__content {
+            padding-left: @section-padding-left-mobile;
+            padding-right: @section-padding-left-mobile -27px;
+        }
+
+
+    }
+
+    @media screen and (max-width: 375px) {
+        &__content {
+            margin-top: -69px;
+            
+            .title::first-line {
+                color: @white;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        justify-content: space-around;
+    }
+
+}
