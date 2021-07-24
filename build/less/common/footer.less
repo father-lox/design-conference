@@ -1,0 +1,183 @@
+@import "../socialmedia/socialmedia.less";
+@import "../base/_fonts.less";
+
+.footer {
+    @iconMaxMinHeightWidth: 24px;
+    // background-color: gray;
+    padding-left: @left-indent-of-outside-block-depth-1 + @left-indent-of-outside-block-depth-2;
+    padding-right: @right-indent-of-outside-block-depth-1 + @right-indent-of-outside-block-depth-2;
+
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 213px;
+    z-index: 0;
+    
+    .socialmedia {
+        align-self: center;
+        display: flex;
+        max-width: 350px;
+        width: 100%;
+        margin-bottom: 39px;
+        &__link {
+            margin-right: 60px;
+            &::after {
+                right: -30px;
+            }
+        }
+
+        &__icon {
+            max-width: @iconMaxMinHeightWidth;
+            max-height: @iconMaxMinHeightWidth;
+
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__agreement, &__logo, &__email {
+        margin-right: 10px;
+    }
+
+    &__agreement {
+        display: flex;
+        width: 100%;
+        max-width: 505px;
+        justify-content: space-between;
+        align-items: center;
+        // color: @white;
+        .link {
+            font-weight: 300;
+            text-transform: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__logo {
+        width: 158px;
+    }
+    
+    
+    &__email, &__phone {
+        text-decoration: none;
+    }
+    
+    &__email {
+        font-weight: 400;
+        color: @red;
+    }
+
+    &__phone {
+        font-weight: 700;
+        color: @white;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 10%;
+        background: center 0/cover url("../../img/logo.svg") no-repeat;
+        z-index: -1;
+    }
+
+    @media screen and (max-width: @breakpoint-laptop-m) {
+        background-color: @black;
+        position: relative;
+
+        &__logo {
+            display: none;
+        }
+        
+        &::after {
+            opacity: 100%;
+            background: center/cover url("../../img/logo.svg");
+            background-size: 20%;
+            opacity: 20%;
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-laptop-s) {
+        padding-left: @left-indent-of-outside-block-depth-1;
+        padding-right: @right-indent-of-outside-block-depth-1;
+        
+        .socialmedia {
+            order: 1;
+            margin-bottom: 0;
+            margin-top: 33px;
+        }
+
+        &__links {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__agreement, &__logo, &__email {
+            margin-right: 0;
+        }
+        
+        &__agreement, &__email {
+                margin-bottom: 30px;
+        }
+    }
+    @media screen and (max-width: @breakpoint-tablet) {
+        padding: 28px 37px;
+        
+        .socialmedia {
+            order: 0;
+            margin-bottom: 33px;
+            margin-top: 0;
+        }
+
+        &__agreement {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .link:not(:last-child) {
+                margin-bottom: 23px;
+            }
+        }
+
+        &::after {
+            background-size: 50%;
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        
+        .socialmedia {
+            align-self: flex-start;
+            &__link {
+                margin-right: 30px;
+                &::after {
+                    right: -15px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-m) {
+        
+        &::after {
+            background: center/cover url("../../img/logo-template.png") no-repeat;
+            opacity: 100%;
+        }
+    }
+}

@@ -3,7 +3,11 @@
 @import "../text/text.less";
 
 .practice {
-    padding: 84px 170px 80px 170px;
+    .background-hidden-lines();
+
+    padding-top: 84px;
+    padding-bottom: 80px;
+    padding-right: @left-indent-of-outside-block-depth-1 + @left-indent-of-outside-block-depth-2 + @left-indent-of-outside-block-depth-3;
 
     .title {
         margin-bottom: 71px;
@@ -18,9 +22,10 @@
         font-size: 24px;
         max-width: 564px;
         line-height: 36px;
+        margin-left: @left-indent-of-outside-block-depth-1 + @left-indent-of-outside-block-depth-2 + @left-indent-of-outside-block-depth-3;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: @breakpoint-laptop-m) {
         .title {
             margin-bottom: 28px;
         }
@@ -35,8 +40,11 @@
         }
     }
 
-    @media screen and (max-width: 864px) {
-        padding: 35px 49px 30px 49px;
+    @media screen and (max-width: @breakpoint-tablet) {
+        padding-top: 35px;
+        padding-right: @left-indent-of-outside-block-depth-1;
+        padding-bottom: 30px;
+
 
         .title_decor-square::after {
             width: 143px;
@@ -45,10 +53,16 @@
             left: -30px;
             top: -100px;
         }
+
+        .text {
+            margin-left: @left-indent-of-outside-block-depth-1;
+        }
     }
     
-    @media screen and (max-width: 500px) {
-        padding: 35px @section-padding-left-mobile 30px @section-padding-left-mobile;
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        padding-top: 35px;
+        padding-right: @left-indent-of-outside-block-depth-1-mobile + @left-indent-of-outside-block-depth-2-mobile;
+        padding-bottom: 30px;
 
         .title {
             max-width: 413px;
@@ -58,9 +72,13 @@
             top: -50px;
             left: 66px;
         }
+
+        .text {
+            margin-left: @left-indent-of-outside-block-depth-1-mobile;
+        }
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: @breakpoint-mobile-m) {
         .title_decor-square::after {
             left: 66px;
         }

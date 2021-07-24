@@ -1,0 +1,105 @@
+@import "../base/_fonts.less";
+@import "../base/_mixins.less";
+@import "../base/_variable.less";
+@import "../event/event.less";
+
+.program {
+
+    background: center/cover url("../../img/background-open.jpg") no-repeat;
+    @paddingBottomBock: 118px;
+    @paddingTopBlock: 75px;
+    @paddingTopAndBottomWrapper: 57px;
+
+    background-color: black;
+    
+    padding-left: @left-indent-of-outside-block-depth-1 + @left-indent-of-outside-block-depth-2;
+    padding-right: @right-indent-of-outside-block-depth-1 + @right-indent-of-outside-block-depth-2;
+    padding-top: @paddingTopBlock;
+    padding-bottom: @paddingBottomBock;
+    position: relative;
+    margin-top: 67px;
+
+    &__wrapper {
+        background-color: @transparent-black;
+        padding-left: @left-indent-of-outside-block-depth-3;
+        padding-right: @right-indent-of-outside-block-depth-1 + @right-indent-of-outside-block-depth-2;
+        padding-top: @paddingTopAndBottomWrapper;
+        padding-bottom: @paddingTopAndBottomWrapper;
+    }
+
+        .title {
+            margin-left: @left-indent-of-outside-block-depth-3 - @paddingTopBlock;
+            margin-top: 104px - @paddingTopAndBottomWrapper;
+            margin-bottom: 80px;
+            z-index: 1;
+        }
+
+    &__middle-content {
+        margin-left: 80px;
+    }
+
+    &::before {
+        content: "";
+        height: 113px;
+        width: 82.5%;
+        position: absolute;
+        right: 0;
+        top: 16%;
+        background-color: @red;
+        z-index: 1;
+    }
+    z-index: 0;
+
+    @media screen and (max-width: @breakpoint-laptop-m) {
+        padding-bottom: @paddingTopBlock;
+
+        .title {
+            margin-left: 0;
+        }
+
+        &__wrapper {
+            padding-right: @left-indent-of-outside-block-depth-3;
+        }
+
+        &__middle-content {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-tablet) {
+        padding: @left-indent-of-outside-block-depth-1;
+        &::before {
+            top: 14%;
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        padding: 30px 0 30px @left-indent-of-outside-block-depth-1-mobile + @left-indent-of-outside-block-depth-2-mobile;
+    
+        .title {
+            margin-top: 28px;
+            margin-bottom: 46px;
+        }
+
+        &__wrapper {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+
+        &::before {
+            height: 80px;
+            top: 10%;
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-m) {
+        margin-top: 30px;
+        background-image: url("../../img/background-open-rotated.jpg");
+        &::before {
+            width: 77.5%;
+            // top: 10%;
+        }
+    }
+}

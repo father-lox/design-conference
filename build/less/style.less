@@ -2,25 +2,31 @@
 @import "./settings/reset.less";
 @import "./base/_variable.less";
 @import "./base/_fonts.less";
+@import "./base/_mixins.less";
 @import "./common/header.less";
 @import "./common/practice.less";
 @import "./common/section-with-image.less";
-// @import "./section/section.less";
+@import "./common/speakers.less";
+@import "./common/program.less";
+@import "./common/join.less";
+@import "./common/footer.less";
 
 * {
     box-sizing: border-box;
 }
 
 body {
+
+    .background-lines();
     font-family: "Helvetica";
     font-weight: 400;
     font-size: @fs-16;
     box-sizing: border-box;
+    position: relative;
 }
 
-.section-with-image:last-child {
+.section-with-image:nth-child(3) {
     margin-top: 90px;
-
     .section-with-image__picture {
         height: 343px;
         width: 100%;
@@ -48,6 +54,10 @@ body {
 
     .section-with-image__content {
         order: -1;
+    }
+
+    @media screen and (max-width: @breakpoint-laptop-m) {
+        position: static;
     }
 
     @media screen and (max-width: 864px) {

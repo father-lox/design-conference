@@ -2,8 +2,14 @@
     font-size: 36px;
     line-height: 39px;
 
-    @media screen and (max-width: 864px) {
+    @media screen and (max-width: @breakpoint-tablet) {
         line-height: 36px;
         font-size: 40px;
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-m - 5px) {
+        // line-height: 36px;
+        // font-size: 38px;
+        // word-wrap: break-word;
     }
 }

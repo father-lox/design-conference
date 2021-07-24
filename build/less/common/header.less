@@ -9,16 +9,23 @@
 .header {
     @padding-top: 45px;
     @padding-bottom: 45px;
-    @padding-right: 44px;
-    @padding-left: 49px;
 
-    padding: @padding-top @padding-right @padding-bottom @padding-left;
+    padding: 
+        @padding-top
+        @right-indent-of-outside-block-depth-1
+        @padding-bottom
+        @left-indent-of-outside-block-depth-1;
+        
     background: center/cover url("../../img/background-brick.jpg") no-repeat;
     position: relative;
 
     &__wrapper {
         background-color: @transparent-black;
-        padding: 37px 41px 120px 41px;
+        padding: 
+            37px
+            @right-indent-of-outside-block-depth-2
+            120px
+            @left-indent-of-outside-block-depth-2;
     }
     
     &__top-content {
@@ -29,12 +36,6 @@
         .menu {
             margin: 0 30px;
             width: 100%;
-
-            
-        
-            @media screen and (max-width: 1080px) {
-                
-            }
         }
     }
     
@@ -45,7 +46,7 @@
     }
 
     &__middle-content {
-        padding-left: 80px;
+        padding-left: @left-indent-of-outside-block-depth-3;
 
         & .title {
             margin-bottom: 4px;
@@ -60,7 +61,7 @@
         position: absolute;
         top: 417px;
         right: 0;
-        padding-right: @padding-right;
+        padding-right: @left-indent-of-outside-block-depth-1;
         padding-left: 30px;
     }
 
@@ -74,8 +75,7 @@
         background-color: @red;
     }
 
-    @media screen and (max-width: 1200px) {
-
+    @media screen and (max-width: @breakpoint-laptop-m) {
         .menu {
             justify-content: space-between;
             
@@ -85,7 +85,7 @@
         }
     }
 
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: @breakpoint-laptop-s) {
         &__top-content {
             margin-bottom: 76px;
         }
@@ -101,38 +101,37 @@
 
         .menu {
             height: 50px;
-                align-content: space-between;
-                justify-content: flex-start;
+            align-content: space-between;
+            justify-content: flex-start;
         
-                .link {
-                    min-width: 150px;
-                }
-        
-                .link:not(:last-child) {
-                    margin-right: 0;
-                }
+            .link {
+                min-width: 150px;
+            }
+    
+            .link:not(:last-child) {
+                margin-right: 0;
+            }
         }
     }
 
-    @media screen and (max-width: 864px) {
+    @media screen and (max-width: @breakpoint-tablet) {
         &__wrapper {
             background-color: @transparent-black;
-            padding: 17px 20px 80px 14px;
+            padding: 17px @left-indent-of-outside-block-depth-2-mobile 80px @right-indent-of-outside-block-depth-1-mobile;
         }
         
         &::before {
             display: none;
         }
 
-        &__middle-content {
-            .title {
-                font-size: 55px;
-            }
-        }
+        // &__middle-content {
+        //     .title {
+        //         font-size: 55px;
+        //     }
+        // }
 
         &__top-content {
             flex-direction: column;
-            // position: relative;
             align-items: flex-start;
             margin-bottom: 30px;
 
@@ -178,15 +177,17 @@
         }
     }
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        
         &__wrapper {
-            padding-bottom: 176px;
+            @padding-bottom: 130px;
+            padding-bottom: @padding-bottom;
         }
 
         &__middle-content {
-            .title {
-                font-size: 45px;
-            }
+            // .title {
+            //     font-size: 45px;
+            // }
 
             .text {
                 font-weight: 200;
@@ -196,12 +197,11 @@
         padding: 38px 14px 43px 14px;
 
         .meeting {
-            bottom: auto;
-            top: 452px;
+            bottom: @padding-bottom - 2px;
         }
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: @breakpoint-mobile-m) {
         .menu {
             .link {
                 min-width: 50%;
@@ -215,7 +215,18 @@
         .meeting {
             padding-right: 49px - 14px;
             padding-left: 30px;
+
+            &__logo {
+                right: 20px;
+            }
         }
     }
 
+    @media screen and (max-width: @breakpoint-mobile-s) {
+        &__top-content {
+            .button {
+                display: none;
+            } 
+        }
+    }
 }

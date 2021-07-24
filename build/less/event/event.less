@@ -1,0 +1,37 @@
+@import "../base/_variable.less";
+
+.event {
+    max-width: 700px;
+    width: 100%;
+    border-bottom: 6px @white solid;
+    color: @white;
+    padding-bottom: 20px;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    &__place {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 11px;
+    }
+
+    &__description {
+        font-weight: 200;
+        margin-bottom: 9px;
+    }
+
+    &__author {
+        font-size: 20px;
+        color: @red;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
