@@ -1,0 +1,30 @@
+@import "../base/_variable.less";
+@import "../slider/slider.less";
+
+.speakers {
+    .background-hidden-lines("right");
+
+    padding-top: 90px;
+    .slider {
+        margin-left: @left-indent-of-outside-block-depth-1 + @left-indent-of-outside-block-depth-2 + @left-indent-of-outside-block-depth-3;
+    }
+    
+    .title_size-h2 {
+        margin-bottom: 66px;
+    }
+
+    @media screen and (max-width: @breakpoint-laptop-s) {
+        padding-top: 0;
+        margin-top: 90px;
+        .slider {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-tablet) {
+        padding-top: 0;
+        margin-top: 32px;
+    }
+
+    
+}

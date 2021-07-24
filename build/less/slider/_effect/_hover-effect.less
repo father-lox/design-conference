@@ -1,0 +1,57 @@
+.slider-item {
+
+    &:nth-child(4n - 3) .slider-item__image_hover-effect  {
+        &::before {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            right: 0;
+        }
+        
+        &:hover::before {
+            width: 0;
+        }
+    }
+
+    &:nth-child(4n - 2) .slider-item__image_hover-effect {
+        &::before {
+            width: 100%;
+            height: 25%;
+            top: 40px;
+            right: 0;
+        }
+    
+        &:hover::before {
+            height: 0;
+            top: 0;
+        }
+    }
+
+    &:nth-child(4n - 1) .slider-item__image_hover-effect {
+        &::before {
+            width: 100%;
+            height: 40%;
+            bottom: 60px;
+            right: 0;
+        }
+    
+        &:hover::before {
+            height: 0;
+            bottom: 0;
+        }
+    }
+
+    &:nth-child(4n) .slider-item__image_hover-effect {
+        &::before {
+            width: 25%;
+            height: 100%;
+            top: 0;
+            left: 40px;
+        }
+    
+        &:hover::before {
+            width: 0;
+            left: 0;
+        }
+    }
+}

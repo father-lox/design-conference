@@ -1,12 +1,20 @@
+@import "../../base/_variable.less";
+
 .title_size-h2 {
     font-size: 48px;
     line-height: 26px;
+    margin-left: @left-indent-of-outside-block-depth-1 + @left-indent-of-outside-block-depth-2 + @left-indent-of-outside-block-depth-3;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: @breakpoint-laptop-m) {
         line-height: 38px;
     }
 
-    @media screen and (max-width: 864px) {
+    @media screen and (max-width: @breakpoint-tablet) {
         font-size: 42px;
+        margin-left: @left-indent-of-outside-block-depth-1;
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        margin-left: @left-indent-of-outside-block-depth-1-mobile;
     }
 }

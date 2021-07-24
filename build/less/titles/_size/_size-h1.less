@@ -2,7 +2,16 @@
     font-size: 82px;
     line-height: 90px;
 
-    @media screen and (max-width: 864px) {
-        line-height: 49px;
+    @media screen and (max-width: @breakpoint-tablet) {
+        line-height: 55px;
+        font-size: 60px;
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        font-size: 45px;
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-m) {
+        font-size: 38px;
     }
 }

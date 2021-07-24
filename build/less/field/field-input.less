@@ -1,0 +1,45 @@
+@import "../base/_variable.less";
+@import "../base/_fonts.less";
+
+.field-input {
+    font-weight: 700;
+    font-size: 20px;
+    
+    position: relative;
+    height: 79px;
+    
+
+    &__input {
+        height: 100%;
+        width: 100%;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 0;
+        border: none;
+        border-bottom: 3px solid @black;
+        outline:none;
+        background-color: transparent;
+
+    }
+
+    &__input:not(:placeholder-shown) ~ &__promt,
+    &__input:focus + &__promt {
+            top: 0;
+            transform: none;
+            font-size: 14px;
+            font-weight: 300;
+            // text-transform: none;
+    }
+
+    &__promt {
+        transition-property: font-weight, font-size, top;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        text-transform: uppercase;
+    }
+    
+}

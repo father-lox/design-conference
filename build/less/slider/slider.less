@@ -1,0 +1,158 @@
+@import "../base/_variable.less";
+@import "./slider-item.less";
+
+.arrowRightIndent(@value: 90px, @offset: 0) {
+    right: @value + @offset;
+}
+
+.slick {
+    @arrowWidthAndHeight: 43px;
+    @arrowSpaceBetween: 20px;
+
+    &-slider {
+        position: relative;
+        padding-bottom: 66px;
+        padding-left: 26px;
+        
+
+        &::before {
+            content: "";
+            display: block;
+            height: 380px + 26px * 2;
+            max-width: 380px;
+            width: 100%;
+            background-color: @red;
+            position: absolute;
+            top: -26px;
+            left: 0;
+
+        }
+    }
+
+    &-list {
+        overflow: hidden;
+    }
+
+    &-slide {
+        margin: 0 10px;
+        width: 380px;
+        // width: 100%;
+    }
+
+    &-track {
+        display: flex;
+        min-width: 0;
+    }
+
+    &-arrow {
+        width: @arrowWidthAndHeight;
+        height: @arrowWidthAndHeight;
+        font-size: 0;
+        border: 2px solid @red;
+        background-color: transparent;
+        position: relative;
+        z-index: 0;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        &:hover::before {
+            color: @white;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    &-prev {
+        .arrowRightIndent(90px, @arrowSpaceBetween + @arrowWidthAndHeight)
+    }
+
+    &-next {
+        .arrowRightIndent()
+    }
+
+    &-prev::before, &-next::before {
+        color: @red;
+        font-size: 20px;
+        transition: color 0.3s ease-out;
+        z-index: -1;
+    }
+
+    &-prev::before {
+        content: "\1F818";
+    }
+    
+    &-next::before {
+        content: "\1F81A";
+    }
+
+    &-prev::after, &-next::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        display: block;
+        background-color: @red;
+        z-index: -2;
+        transition: width 0.3s ease-out;
+    }
+
+    &-prev::after {
+        right: 0;
+    }
+    
+    &-next::after {
+        left: 0;
+    }
+
+    @media screen and (max-width: @breakpoint-laptop-s) {
+        &-slider {
+            &::before {
+                max-width: none;
+                width: 43%;
+            }
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-tablet) {
+        &-current .slider-item__image_hover-effect {
+            &::before {
+                opacity: 0;
+            }
+
+            .slider-item__image-content {
+                filter: grayscale(0);
+            }
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-l) {
+        &-prev {
+            .arrowRightIndent(40px, @arrowSpaceBetween + @arrowWidthAndHeight)
+        }
+    
+        &-next {
+            .arrowRightIndent(40px)
+        }
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-m) {
+        &-slider {
+            padding-left: 13px;
+        }
+        
+        &-slide {
+            width: 245px;
+        }
+
+        &-slider::before {
+            height: 245px + 13px * 2;
+            top: -13px;
+        }
+    }
+    
+}

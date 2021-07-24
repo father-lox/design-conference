@@ -26,10 +26,12 @@
   "homepage": "https://github.com/father-lox/design-conference#readme",
   "dependencies": {
     "gulp": "^4.0.2",
-    "gulp-less": "^5.0.0"
+    "gulp-less": "^5.0.0",
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "browser-sync": "^2.27.4",
+    "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^4.0.1",
