@@ -2,6 +2,7 @@ const {src, dest, watch, parallel} = require("gulp");
 
 const browserSync = require('browser-sync').create();
 const less = require('gulp-less');
+const fileinclude = require('gulp-file-include');
 
 const LessAutoprefix = require("less-plugin-autoprefix");
 const autoprefix = new LessAutoprefix({ browsers: ['cover 99.5%', "last 10 version", "IE 11"] });
@@ -22,6 +23,13 @@ function LESSpreprocessing() {
 function HTMLpreprocessing() {
     return src("build/*.html")
         .pipe(dest('dist'))
+        .pipe(browserSync.stream());
+}
+
+function JSpreprocessing() {
+    return src("build/js/*.js")
+        .pipe(fileinclude())
+        .pipe(dest('dist/js/'))
         .pipe(browserSync.stream());
 }
 
@@ -55,6 +63,7 @@ function watching() {
     watch(["build/img/**/*"], image);
     watch("dist/*.html").on('change', browserSync.reload);
     watch(["build/fonts/*"], fontConverter);
+    watch(["build/js/**/*.js"], JSpreprocessing);
 }
 
 exports.image = image;
