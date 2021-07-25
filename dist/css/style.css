@@ -1611,8 +1611,8 @@ table {
   outline: none;
   background-color: transparent;
 }
-.field-input__input:not(:placeholder-shown) ~ .field-input__promt,
-.field-input__input:focus + .field-input__promt {
+.field-input__input_hidden-promt ~ .field-input__promt,
+.field-input__input_hidden-promt + .field-input__promt {
   top: 0;
   -webkit-transform: none;
      -moz-transform: none;
