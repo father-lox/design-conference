@@ -786,7 +786,7 @@ table {
 }
 .header {
   padding: 45px 44px 45px 49px;
-  background: center / cover url("../../img/background-brick.jpg") no-repeat;
+  background: center / cover url("../img/background-brick.jpg") no-repeat;
   position: relative;
 }
 .header__wrapper {
@@ -1485,7 +1485,7 @@ table {
   }
 }
 .program {
-  background: center / cover url("../../img/background-open.jpg") no-repeat;
+  background: center / cover url("../img/background-open.jpg") no-repeat;
   background-color: black;
   padding-left: 90px;
   padding-right: 90px;
@@ -1565,7 +1565,7 @@ table {
 @media screen and (max-width: 375px) {
   .program {
     margin-top: 30px;
-    background-image: url("../../img/background-open-rotated.jpg");
+    background-image: url("../img/background-open-rotated.jpg");
   }
   .program::before {
     width: 77.5%;
@@ -1623,7 +1623,7 @@ table {
   text-transform: uppercase;
 }
 .join {
-  background: center / cover url("../../img/background-grid-1.jpg") no-repeat;
+  background: center / cover url("../img/background-grid-1.jpg") no-repeat;
   padding-left: 170px;
   padding-right: 90px;
   padding-top: 86px;
@@ -1892,7 +1892,7 @@ table {
   width: 100%;
   height: 100%;
   opacity: 10%;
-  background: center 0 / cover url("../../img/logo.svg") no-repeat;
+  background: center 0 / cover url("../img/logo.svg") no-repeat;
   z-index: -1;
 }
 @media screen and (max-width: 1200px) {
@@ -1905,7 +1905,7 @@ table {
   }
   .footer::after {
     opacity: 100%;
-    background: center / cover url("../../img/logo.svg");
+    background: center / cover url("../img/logo.svg");
     -webkit-background-size: 20% 20%;
        -moz-background-size: 20%;
             background-size: 20%;
@@ -2001,7 +2001,7 @@ table {
 }
 @media screen and (max-width: 375px) {
   .footer::after {
-    background: center / cover url("../../img/logo-template.png") no-repeat;
+    background: center / cover url("../img/logo-template.png") no-repeat;
     opacity: 100%;
   }
 }
