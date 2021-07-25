@@ -990,7 +990,7 @@ table {
   padding-bottom: 80px;
   padding-right: 170px;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 864px) {
   .practice {
     background: transparent;
   }
@@ -1427,8 +1427,9 @@ table {
   background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, #ffffff 50%);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, #ffffff 50%);
   padding-top: 90px;
+  padding-bottom: 67px;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 864px) {
   .speakers {
     background: transparent;
   }
@@ -1440,10 +1441,6 @@ table {
   margin-bottom: 66px;
 }
 @media screen and (max-width: 1080px) {
-  .speakers {
-    padding-top: 0;
-    margin-top: 90px;
-  }
   .speakers .slider {
     margin-left: 0;
   }
@@ -1452,6 +1449,11 @@ table {
   .speakers {
     padding-top: 0;
     margin-top: 32px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .speakers {
+    padding-bottom: 0;
   }
 }
 .event {
@@ -1492,7 +1494,6 @@ table {
   padding-top: 75px;
   padding-bottom: 118px;
   position: relative;
-  margin-top: 67px;
   z-index: 0;
 }
 .program__wrapper {
@@ -2024,7 +2025,7 @@ body {
           box-sizing: border-box;
   position: relative;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 864px) {
   body {
     background: transparent;
   }
