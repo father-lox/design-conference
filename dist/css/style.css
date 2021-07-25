@@ -1789,7 +1789,7 @@ table {
 .socialmedia__icon:hover {
   opacity: 1;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 864px) {
   .socialmedia__icon {
     opacity: 1;
   }
@@ -1979,6 +1979,9 @@ table {
     padding: 28px 37px;
   }
   .footer .socialmedia {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
     -webkit-box-ordinal-group: 1;
     -webkit-order: 0;
        -moz-box-ordinal-group: 1;
@@ -2011,11 +2014,6 @@ table {
   }
 }
 @media screen and (max-width: 500px) {
-  .footer .socialmedia {
-    -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-            align-self: flex-start;
-  }
   .footer .socialmedia__link {
     margin-right: 30px;
   }
