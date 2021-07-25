@@ -18,7 +18,7 @@
             @border-width: 26px;
             
             &::before {
-                z-index: -1;
+                z-index: 0;
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -86,6 +86,7 @@
             max-width: none;
             min-height: 260px;
             height: 260px;
+            width: 96%;
 
             &_decor::before {
                 width: @border-width;
@@ -113,15 +114,17 @@
         padding-right: 5px;
         
         &__content {
-            padding-left: @section-padding-left-mobile;
-            padding-right: @section-padding-left-mobile -27px;
+            //Пришлось уменьшить для корректного отображения в EI 11
+            // padding-left: @left-indent-of-outside-block-depth-1-mobile + @left-indent-of-outside-block-depth-2-mobile;
+            padding-left: @left-indent-of-outside-block-depth-1-mobile;
+            padding-right: 20px;
         }
     }
 
     @media screen and (max-width: @breakpoint-mobile-m) {
         &__content {
             margin-top: -69px;
-            padding-right: 0;
+            
             
             .title::first-line {
                 color: @white;
@@ -131,6 +134,28 @@
 
     @media screen and (min-width: @breakpoint-laptop-l) {
         justify-content: space-around;
+    }
+
+    @media screen and (max-width: @breakpoint-mobile-s) {
+        padding-right: 0;
+
+        .section-with-image__picture_decor{
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                right: 0;
+            }
+        }
+
+        .title::first-line {
+            color: @red;
+        }
+
+        .section-with-image__picture {
+            width: 100%;
+        }
     }
 
 }

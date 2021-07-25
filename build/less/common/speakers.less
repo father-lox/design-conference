@@ -13,9 +13,11 @@
         margin-bottom: 66px;
     }
 
+    // @media screen and (min-width: @breakpoint-laptop-s) {
+        padding-bottom: 67px;
+    // }
+
     @media screen and (max-width: @breakpoint-laptop-s) {
-        padding-top: 0;
-        margin-top: 90px;
         .slider {
             margin-left: 0;
         }
@@ -26,5 +28,7 @@
         margin-top: 32px;
     }
 
-    
+    @media screen and (max-width: @breakpoint-mobile-m) {
+        padding-bottom: 0;
+    }
 }

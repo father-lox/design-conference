@@ -22,12 +22,13 @@
 
     }
 
-    &__input:not(:placeholder-shown) ~ &__promt,
-    &__input:focus + &__promt {
+    &__input_hidden-promt ~ &__promt,
+    &__input_hidden-promt + &__promt {
             top: 0;
             transform: none;
             font-size: 14px;
             font-weight: 300;
+            // Оставил все буквы прописными, потому что в противном случаии, как мне кажется, анимация получается дерганной
             // text-transform: none;
     }
 
@@ -41,5 +42,4 @@
         left: 0;
         text-transform: uppercase;
     }
-    
 }

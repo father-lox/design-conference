@@ -5,7 +5,7 @@
 
 .program {
 
-    background: center/cover url("../../img/background-open.jpg") no-repeat;
+    background: center/cover url("@{releativePathToImage}background-open.jpg") no-repeat;
     @paddingBottomBock: 118px;
     @paddingTopBlock: 75px;
     @paddingTopAndBottomWrapper: 57px;
@@ -17,7 +17,6 @@
     padding-top: @paddingTopBlock;
     padding-bottom: @paddingBottomBock;
     position: relative;
-    margin-top: 67px;
 
     &__wrapper {
         background-color: @transparent-black;
@@ -66,6 +65,10 @@
         }
     }
 
+    // @media screen and (max-width: @breakpoint-laptop-s) {
+    //     margin-top: 67px;
+    // }
+
     @media screen and (max-width: @breakpoint-tablet) {
         padding: @left-indent-of-outside-block-depth-1;
         &::before {
@@ -96,7 +99,7 @@
 
     @media screen and (max-width: @breakpoint-mobile-m) {
         margin-top: 30px;
-        background-image: url("../../img/background-open-rotated.jpg");
+        background-image: url("@{releativePathToImage}background-open-rotated.jpg");
         &::before {
             width: 77.5%;
             // top: 10%;
