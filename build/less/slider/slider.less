@@ -79,14 +79,20 @@
         font-size: 20px;
         transition: color 0.3s ease-out;
         z-index: -1;
+        font-weight: 700;
+        font-family: "Helvetica";
     }
 
     &-prev::before {
-        content: "\1F818";
+        // EI не понимает
+        // content: "\1F818";
+        content: "<";
     }
     
     &-next::before {
-        content: "\1F81A";
+        // EI не понимает
+        // content: "\1F81A";
+        content: ">";
     }
 
     &-prev::after, &-next::after {

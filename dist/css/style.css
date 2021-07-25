@@ -1379,12 +1379,14 @@ table {
   -moz-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
   z-index: -1;
+  font-weight: 700;
+  font-family: "Helvetica";
 }
 .slick-prev::before {
-  content: "\1F818";
+  content: "<";
 }
 .slick-next::before {
-  content: "\1F81A";
+  content: ">";
 }
 .slick-prev::after,
 .slick-next::after {
