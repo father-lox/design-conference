@@ -504,6 +504,11 @@ table {
   font-weight: 900;
   font-style: normal;
 }
+.object-fit-poly {
+  -o-object-fit: cover;
+     object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
 .title {
   font-weight: 900;
   text-transform: uppercase;
