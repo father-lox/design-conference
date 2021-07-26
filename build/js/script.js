@@ -1,4 +1,10 @@
+@@include("ofi.js")
+@@include('slider-settings/slider-settings.js')
+@@include('form/form.js')
+
 $(document).ready(function() {
-    @@include('slider-settings/slider-settings.js')
-    @@include('form/form.js')
+    inputValueToUppercase();
+    objectFitImages();
 });
+
+// $(function () { objectFitImages() });

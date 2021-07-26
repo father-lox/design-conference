@@ -3,6 +3,7 @@
 @import "./base/_variable.less";
 @import "./base/_fonts.less";
 @import "./base/_mixins.less";
+@import "./base/_object-fit-poly.less";
 @import "./common/header.less";
 @import "./common/practice.less";
 @import "./common/section-with-image.less";
@@ -16,6 +17,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     .background-lines();
     font-family: "Helvetica";
     font-weight: 400;
