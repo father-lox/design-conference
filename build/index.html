@@ -7,7 +7,7 @@
     <title>Design Conference</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="body">
     <header class="header">
         <div class="header__wrapper">
             <div class="header__top-content">
@@ -169,19 +169,19 @@
                 <h2 class="title title_size-h2">принять <span class="text_color-red">участие</span></h2>
                 <form class="join__form" method="post" enctype="text/plain">
                     <div class="field-input">
-                        <input class="field-input__input" type="text" name="first-last-name" id="first-last-name" placeholder=" ">
+                        <input required class="field-input__input" type="text" name="first-last-name" id="first-last-name" placeholder=" " maxlength="64">
                         <label class="field-input__promt" for="first-last-name">Ваши имя и фамилия</label>
                     </div>
                     <div class="field-input">
-                        <input class="field-input__input" type="text" name="company" id="company" placeholder=" ">
+                        <input required class="field-input__input" type="text" name="company" id="company" placeholder=" " maxlength="16">
                         <label class="field-input__promt" for="company">Компания</label>
                     </div>
                     <div class="field-input">
-                        <input class="field-input__input" type="email" name="email" id="email" placeholder=" ">
+                        <input required class="field-input__input" type="email" name="email" id="email" placeholder=" " pattern="^[^@]+@[^@.]+\.[^@]+$">
                         <label class="field-input__promt" for="email">E-mail</label>
                     </div>
                     <div class="field-input">
-                        <input class="field-input__input" type="tel" name="phone" id="phone" placeholder=" ">
+                        <input required class="field-input__input" type="tel" name="phone" id="phone" placeholder=" ">
                         <label class="field-input__promt" for="phone">Телефон</label>
                     </div>
                     <button class="button button_type-a" type="submit">Зарегистрироваться</button>
